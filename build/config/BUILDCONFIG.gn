@@ -1,0 +1,9 @@
+# 基础配置
+if (target_os == "") {
+  target_os = "win"
+}
+if (target_cpu == "") {
+  target_cpu = "x64"
+}
+
+set_default_toolchain("//build/toolchain:msvc")

@@ -1,0 +1,11 @@
+toolchain("msvc") {
+  tool("cxx") {
+    command = "cl.exe {{source}} /nologo /Fe{{output}}"
+    outputs = [ "{{target_out_dir}}/{{target_output_name}}.exe" ]
+  }
+
+  tool("link") {
+    command = "link.exe /nologo /out:{{target_output_name}} {{inputs}}"
+    outputs = [ "{{target_out_dir}}/{{target_output_name}}.exe" ]
+  }
+}
